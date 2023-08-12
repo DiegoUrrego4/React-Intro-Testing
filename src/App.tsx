@@ -1,10 +1,12 @@
 import './App.css';
-import { Counter } from './Counter';
+import { FirstApp } from './FirstApp';
+// import { Counter } from './Counter';
 
 function App() {
   return (
     <>
-      <Counter />
+      {/* <Counter /> */}
+      <FirstApp title='Hola, Soy Vegeta' />
     </>
   );
 }
