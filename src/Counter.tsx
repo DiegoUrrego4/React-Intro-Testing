@@ -1,14 +1,30 @@
-import { useCounter } from './hooks/useCounter';
+import { useState } from 'react';
 
-export const Counter = () => {
-  const { counter, handleAdd, handleReset, handleSubtract } = useCounter(10);
+interface Props {
+  value: number;
+}
+
+export const Counter = ({ value }: Props) => {
+  const [counter, setCounter] = useState(value);
+
+  const handleAdd = () => {
+    // console.log(event)
+    setCounter(counter + 1);
+    // setCounter( (c) => c + 1 )
+  };
+
+  const handleSubstract = () => setCounter(counter - 1);
+  const handleReset = () => setCounter(value);
 
   return (
     <>
-      <p>Number of clicks: {counter}</p>
-      <button onClick={() => handleAdd(2)}>+1</button>
-      <button onClick={handleReset}>Reset</button>
-      <button onClick={() => handleSubtract()}>-1</button>
+      <h1>CounterApp</h1>
+      <h2>{counter}</h2>
+      <button onClick={handleAdd}>+1</button>
+      <button aria-label="btn-reset" onClick={handleReset}>
+        Reset
+      </button>
+      <button onClick={handleSubstract}>-1</button>
     </>
   );
 };

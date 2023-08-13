@@ -5,7 +5,7 @@ import { Counter } from './Counter';
 function App() {
   return (
     <>
-      <Counter />
+      <Counter value={10} />
       {/* <FirstApp title="Hola, Soy Vegeta" /> */}
     </>
   );
